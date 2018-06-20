@@ -41,4 +41,4 @@ A script ami letölti & feldolgozza, majd csv formátumba elmenti az orderbook-o
 A cryptowatch publikus api segítségével.</br>
 
 A példa kimenet a fin és hetfoi_adat mappában érhető el.</br>
-Megjegyzés: A letöltött Orderbook-ok 1gb-os lettek, ezért ezt nem tudtam feltölteni.
+Megjegyzés: A letöltött Orderbook a fin mappaba 1gb-os lett, ezért ezt nem tudtam feltölteni. A hetfoi_adat mappahoz tartozó rendelési könyv is meghaladja a max méretet, de az google drivon itt(https://drive.google.com/open?id=1a_ORUmnz2RQVbTWMwXU-P_r0MlOFt7UE) elérhető. </br>
