@@ -17,16 +17,22 @@ A képek továbbá jól mutatják az orderbook-ok asszimetráját tehát, hogy a
 Tartalmazza a konvolúciós hálót és feldolgozza az orederbook-okat.  <br />
 Háló: konvolúciós háló,
 X - Orderbook-ok, egyszerre 40 Orderbook-ot kap meg a háló
-y - trend, 1 ha a következő 100 adat átlaga nagyobb mint az előző 100 adat átllaga
-adat itt a btc árára vonatkozik
+y - trend, 1 ha a következő 100 adat átlaga nagyobb mint az előző 100 adat átlaga
+(adat itt a btc árára vonatkozik)
 
 ## price.py
 
-LSTM hálózat, a fentebb említett elv alapján meghatározott trender jósolja meg
+LSTM hálózat, a fentebb említett elv alapján meghatározott trendet jósolja meg
 X - btc ár adatok, egyszerre megkap ~ előző 10 at
 y - trend
 
+## price_plots.py
+Itt vicualizálom az ár adatokat és a létrehozott trendet.<br />
 
+Fontosabb kimenete:<br />
+Bitcoin_ar.png - A letöltés során a Bitcoin ára<br />
+ar_elso_4000.png - A letöltött első 4000 áradat.<br />
+trend_elso_4000.png - Az első 4000 adathoz tartozó trend<br />
 ## Download.py
 
 A script ami letölti & feldolgozza, majd csv formátumba elmenti az orderbook-okat és btc price adatokat
