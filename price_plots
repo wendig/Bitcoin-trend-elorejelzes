@@ -10,6 +10,10 @@ from keras.layers import Dropout
 from keras import optimizers
 from keras.optimizers import SGD
 
+
+
+
+
 name = 'fin/price1'
 df = pd.read_csv( name + '.csv')
 #df = pd.DataFrame({'x':np.arange(500)})
