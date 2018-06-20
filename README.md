@@ -36,3 +36,11 @@ trend_elso_4000.png - Az első 4000 adathoz tartozó trend </br>
 ## Download.py
 
 A script ami letölti & feldolgozza, majd csv formátumba elmenti az orderbook-okat és btc price adatokat
+
+A példa kimenet a fin és hetfoi_adat mappában érhető el.</br>
+
+
+
+
+
+
