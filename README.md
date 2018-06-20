@@ -16,9 +16,9 @@ A képek továbbá jól mutatják az orderbook-ok asszimetráját(valamint ennek
 ## Orderbook.py
 Tartalmazza a konvolúciós hálót és feldolgozza az orederbook-okat.  </br>
 Háló: konvolúciós háló, </br>
-X - Orderbook-ok, egyszerre 40 Orderbook-ot kap meg a háló
+X - Orderbook-ok, egyszerre 40 Orderbook-ot kap meg a háló</br>
 y - trend, 1 ha a következő 100 adat átlaga nagyobb mint az előző 100 adat átlaga
-(adat itt a btc árára vonatkozik)
+(adat itt a btc árára vonatkozik)</br>
 
 ## price.py
 
