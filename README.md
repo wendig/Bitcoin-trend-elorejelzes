@@ -27,7 +27,7 @@ X - btc ár adatok, egyszerre megkap ~ előző 10 at</br>
 y - trend<br />
 
 ## price_plots.py
-Itt vicualizálom az ár adatokat és a létrehozott trendet.<br />
+Itt vizualizálom az ár adatokat és a létrehozott trendet.<br />
 
 Fontosabb kimenete:<br />
 Bitcoin_ar.png - A letöltés során a Bitcoin ára<br />
