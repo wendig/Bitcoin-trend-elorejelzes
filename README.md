@@ -22,9 +22,9 @@ y - trend, 1 ha a következő 100 adat átlaga nagyobb mint az előző 100 adat 
 
 ## price.py
 
-LSTM hálózat, a fentebb említett elv alapján meghatározott trendet jósolja meg
-X - btc ár adatok, egyszerre megkap ~ előző 10 at
-y - trend
+LSTM hálózat, a fentebb említett elv alapján meghatározott trendet jósolja meg<br />
+X - btc ár adatok, egyszerre megkap ~ előző 10 at<br />
+y - trend<br />
 
 ## price_plots.py
 Itt vicualizálom az ár adatokat és a létrehozott trendet.<br />
