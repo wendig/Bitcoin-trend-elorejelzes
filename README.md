@@ -1,7 +1,7 @@
 # Bitcoin-trend-elorejelzes
 
 ## Orderbook_tester.py
-Ebben a scriptben tesztelem az adatfeldolgozás funkciot, az orderbook-ok keppe alakitasaval, tovabb ellenorizhetem, hogy a halozatom ertelmes adatot kap meg vagy csak zajt.
+Ebben a scriptben tesztelem az orderbook-ok feldolgozását, az orderbook-ok keppe alakitasaval, tovabb ellenorizhetem, hogy a halozatom ertelmes adatot kap meg vagy csak zajt.
 
 A script kiemenete a kepek mappaba, de google drivra is felraktam, mert ezeket érdemes egymás után 'végigpörgetve' megnézni.
 link: https://drive.google.com/open?id=1lSkycFYcWqkTA1qWtskb3D53PZEQVlX3
@@ -33,14 +33,11 @@ Fontosabb kimenete:<br />
 Bitcoin_ar.png - A letöltés során a Bitcoin ára </br>
 ar_elso_4000.png - A letöltött első 4000 áradat. </br>
 trend_elso_4000.png - Az első 4000 adathoz tartozó trend </br>
-## Download.py
 
+## Download.py
+Azért kellett saját adathalmazt építenem, mert a publikusan elérhető már összeállított adatok nem voltak megfelőek számomra, mert két adat közötti eltelt idő ~ 15perc, ami a rövidtávú előrejelzés esetében sok.</br>
+</br>
 A script ami letölti & feldolgozza, majd csv formátumba elmenti az orderbook-okat és btc price adatokat</br>
 A cryptowatch publikus api segítségével.</br>
+
 A példa kimenet a fin és hetfoi_adat mappában érhető el.</br>
-
-
-
-
-
-
