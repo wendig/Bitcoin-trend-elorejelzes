@@ -10,7 +10,7 @@ Magyarázat: </br>
 A kép egy sora egy orderbook. Így a képen megtekinthető az orderbook időbeli változása. </br>
 Feketén kis érték, fehéren nagy értékek szerepelnek. </br>
 Így a középső fekete csík jobb oldalan találhatóak a cumulative asks-ok és a bal oldalon pedig a cumulative bids-ek.<br />
-A képek továbbá jól mutatják az orderbook-ok asszimetráját tehát, hogy asks-ból vagy bids-ből van több. 
+A képek továbbá jól mutatják az orderbook-ok asszimetráját(valamint ennek időbeli változását) tehát, hogy asks-ból vagy bids-ből van több. 
 
 
 ## Orderbook.py
