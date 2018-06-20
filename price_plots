@@ -1,0 +1,118 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+from keras.models import Sequential
+from keras.layers import Activation, Dense
+from keras.layers import LSTM
+from keras.layers import Dropout
+from keras import optimizers
+from keras.optimizers import SGD
+
+name = 'fin/price1'
+df = pd.read_csv( name + '.csv')
+#df = pd.DataFrame({'x':np.arange(500)})
+
+y = df.values[:,0]
+x = np.arange(len(y))
+print(len(y))
+plt.plot(x,y)
+plt.xlabel('Kérés (db)')
+plt.ylabel('Bitcoin ára (Dollár)')
+plt.show()
+
+
+
+### New features
+hossz = 100
+
+
+# exponential moving average 
+df['ema'] = df['x'].ewm(span=hossz).mean() 
+
+# trend
+df['tmp'] = df['ema'].diff()
+df['trend'] = ( df['tmp'] - df['tmp'].mean() )/df['tmp'].std()# normalizal
+df['trend'] = df['trend'] / df['trend'].abs().max() # 1 es -1 koze
+
+
+y = df['trend'].values
+x = np.arange(len(y))
+plt.plot(x,y)
+plt.title('Trend')
+plt.show()
+
+# drop helper column and 
+df = df.dropna(axis=0, how='any')
+
+
+# calc y
+df['sma'] = df['x'].rolling(window=hossz).mean() # simple moving average 
+# mozgo atlag a jovobeli adatokra:
+df['x_rev'] = df['x'].values[::-1]
+df['x_rev'] = np.roll(df['x_rev'].values,1)
+df['rev_sma'] = df['x_rev'].rolling(window=hossz).mean().values[::-1] 
+# multbeli es jovobeli mozgo atlag kulonbsege, h novo v csokken a trend
+df['y'] = df['rev_sma'] / df['sma']
+
+
+# drop helper column and Nan rows
+df = df.drop(['tmp','sma','x_rev','rev_sma'], axis=1)# !!!!
+df = df.dropna(axis=0, how='any')
+############################################################################### 
+# ema visszanézés összehasonlít
+
+############################################################################### 
+
+ar = df['x'].values
+print(len(ar))
+fele = int(len(ar)/2)
+
+a = ar[:fele]
+b = ar[fele:]
+
+print(a.shape)
+print(b.shape)
+
+hiba = a.sum() / b.sum()
+print(hiba)
+
+############################################################################### 
+############################################################################### 
+############################################################################### 
+############################################################################### 
+
+
+
+print(df.head(10))
+
+"""
+# Normalize
+for col in df.columns:
+    if col != 'y' and col != 'trend':
+        df[col] = df[col] / df[col].max()
+    if col == 'y':
+        df['y'] = ( df['y'] - df['y'].mean() )/df['y'].std()# normalizal
+        df['y'] = df['y'] / df['y'].abs().max() # 1 es -1 koze
+        #df[col] = df[col] / df[col].abs().max() # TODO !! ez a legjobb?
+"""
+###############################################################################   
+
+
+df.drop(df.tail(21000).index,inplace=True) # drop last n rows
+
+y = df['y'].values
+x = np.arange(len(y))
+plt.plot(x,y,'r')
+plt.title('y')
+plt.show()
+
+
+y = df.values[:,0]
+x = np.arange(len(y))
+print(len(y))
+plt.plot(x,y)
+plt.xlabel('Idő')
+plt.ylabel('Bitcoin ára (Dollár)')
+plt.show()
